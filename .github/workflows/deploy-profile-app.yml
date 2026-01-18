@@ -1,4 +1,4 @@
-name: Build & Deploy Angular to dkeshri.github.io
+name: Build & Deploy Angular to ionkarpandit.github.io
 
 on:
   workflow_dispatch:
