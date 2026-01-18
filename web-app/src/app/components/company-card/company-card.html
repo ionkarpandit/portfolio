@@ -1,0 +1,30 @@
+<div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm
+            hover:shadow-lg transition-all duration-300 w-full hover:cursor-pointer" 
+            [class.border-indigo-300]="company.isCurrent"
+            [class.shadow-md]="company.isCurrent" [class.border-gray-200]="!company.isCurrent"
+            [class.shadow-sm]="!company.isCurrent">
+    <!-- Company -->
+    <div class="flex items-center gap-4 mb-3">
+        <img [src]='company.logoUrl' [alt]="company.name + 'Logo'" class="w-10 h-10 object-contain" />
+
+        <div>
+            <h3 class="text-lg font-semibold text-gray-900">
+                {{ company.name }}
+            </h3>
+            <p class="text-sm text-gray-600">
+                {{company.designation }}
+            </p>
+        </div>
+    </div>
+    <!-- Date -->
+    <p class="text-sm text-gray-500 mb-4">
+        {{company.startDate}} – {{company.endDate}}
+    </p>
+
+    <!-- Content -->
+    <ul class="space-y-2 text-gray-600">
+        @for (item of company.points; track company.name + item) {
+        <li>• {{ item }}</li>
+        }
+    </ul>
+</div>

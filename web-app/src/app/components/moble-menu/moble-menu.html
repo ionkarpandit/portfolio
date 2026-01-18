@@ -1,0 +1,75 @@
+@if (mobileMenuOpen) {
+<div class="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm" (click)="closeMenu()">
+
+    <!-- Slide panel -->
+    <div class="absolute top-0 right-0 h-full w-72
+             bg-white shadow-2xl p-6
+             animate-[slideIn_0.3s_ease-out]" (click)="$event.stopPropagation()">
+        <!-- Panel Header with Menu Text and Close Button -->
+        <div class="flex items-center justify-between mb-6">
+            <!-- Menu Text -->
+            <h2 class="text-lg font-semibold text-indigo-600">
+                Menu
+            </h2>
+
+            <!-- Close Button -->
+            <div class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-indigo-100">
+                <button (click)="closeMenu()" class="text-gray-700 hover:text-black text-xl cursor-pointer
+                    transition-transform transition-colors duration-300
+                    hover:text-indigo-800 hover:rotate-90">
+                    ✕
+                </button>
+            </div>
+
+        </div>
+        <!-- Horizontal Line -->
+        <hr class="border-t border-gray-300 mb-12 -mx-6">
+        <!-- Mobile links -->
+        <nav class="flex flex-col gap-6 text-lg font-semibold">
+            <a href="#hero" (click)="closeMenu()" class="relative text-sm font-semibold text-gray-900
+               hover:text-indigo-600 cursor-pointer
+               after:absolute after:left-0 after:-bottom-1
+               after:h-0.5 after:w-0 after:bg-indigo-600
+               after:transition-all after:duration-300
+               hover:after:w-full">
+                Home
+            </a>
+            <a href="#experience" (click)="closeMenu()" class="relative text-sm font-semibold text-gray-900
+               hover:text-indigo-600 cursor-pointer
+               after:absolute after:left-0 after:-bottom-1
+               after:h-0.5 after:w-0 after:bg-indigo-600
+               after:transition-all after:duration-300
+               hover:after:w-full">
+                Experience
+            </a>
+
+            <a href="#skills" (click)="closeMenu()" class="relative text-sm font-semibold text-gray-900
+               hover:text-indigo-600 cursor-pointer
+               after:absolute after:left-0 after:-bottom-1
+               after:h-0.5 after:w-0 after:bg-indigo-600
+               after:transition-all after:duration-300
+               hover:after:w-full">
+                Skills
+            </a>
+
+            <a href="#contact" (click)="closeMenu()" class="relative text-sm font-semibold text-gray-900
+               hover:text-indigo-600 cursor-pointer
+               after:absolute after:left-0 after:-bottom-1
+               after:h-0.5 after:w-0 after:bg-indigo-600
+               after:transition-all after:duration-300
+               hover:after:w-full">
+                Contact
+            </a>
+
+            <a href="assets/Deepak_Keshri_Resume.pdf" download class="relative text-sm font-semibold text-gray-900
+               hover:text-indigo-600 cursor-pointer
+               after:absolute after:left-0 after:-bottom-1
+               after:h-0.5 after:w-0 after:bg-indigo-600
+               after:transition-all after:duration-300
+               hover:after:w-full">
+                Download Resume
+            </a>
+        </nav>
+    </div>
+</div>
+}

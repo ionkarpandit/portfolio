@@ -1,0 +1,51 @@
+<section id="hero" class="relative isolate min-h-screen">
+  <!-- Background gradient -->
+  <div class="absolute inset-x-0 -top-40 -z-10 blur-3xl overflow-hidden">
+    <div class=" mx-auto h-[40rem] w-full max-w-[72rem] bg-gradient-to-tr
+     from-indigo-300 to-pink-300 opacity-30 rotate-12 "></div>
+  </div>
+  <!-- Hero Content -->
+  <div class="pt-32 px-6 flex items-center min-h-screen">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center fade-up">
+      <div>
+        <h2 class="text-5xl font-semibold sm:text-6xl">
+          {{name}}
+        </h2>
+        <p class="typing mt-4 text-2xl font-medium text-indigo-600" style="--chars: 21;">
+          {{roleText}}
+        </p>
+        <p class="mt-6 text-lg text-gray-600">
+          Building
+          <strong class="font-semibold text-gray-900">scalable, cloud-ready applications</strong>
+          with
+          <strong class="font-semibold text-gray-900">.NET8/6, MS SQL Server</strong>
+          — backed by
+          <strong class="typing text-indigo-600" style="--chars: 7;">
+            {{years}}
+            <span class="align-super text-sm">+</span>
+            &nbsp;years</strong>
+          of real-world engineering experience.
+        </p>
+        <!-- resume botton here -->
+        <!-- Stylish Download Resume Button with icon, glow, and entrance animation -->
+        <div class="mt-8 flex justify-center sm:mt-6 md:mt-8">
+          <a href="assets/Onkar_Sharma_Senior_Software_Engineer_Resume.pdf" download="Onkar_Sharma_Senior_Software_Engineer_Resume.pdf"
+            aria-label="Onkar Sharma Senior Software Engineer Resume" class="inline-flex items-center gap-2 px-8 py-3 font-semibold text-white
+              bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg shadow-lg
+              hover:scale-105 
+              hover:shadow-[0_0_30px_rgba(99,102,241,0.7),0_0_45px_rgba(236,72,153,0.6)]
+              hover:animate-pulse
+              transition-all duration-300 opacity-0 fade-in">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v8m0 0l-4-4m4 4l4-4M12 4v8" />
+            </svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+      <app-profile-image />
+    </div>
+  </div>
+</section>

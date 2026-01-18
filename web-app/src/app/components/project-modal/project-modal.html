@@ -1,0 +1,32 @@
+@if (isOpen) {
+  <div
+    class="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+    (click)="close()">
+
+    <!-- Modal panel -->
+    <div
+      class="bg-white w-11/12 max-w-3xl p-6 rounded-xl shadow-2xl relative animate-[fadeIn_0.3s_ease-out]"
+      (click)="$event.stopPropagation()">
+
+      <!-- Close button -->
+      <button
+        (click)="close()"
+        class="absolute top-4 right-4 text-gray-700 hover:text-indigo-600 text-xl font-bold transition-colors duration-300">
+        ✕
+      </button>
+
+      <!-- Modal Title -->
+      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">{{ company?.name }} Projects</h2>
+
+      <!-- Projects list -->
+      <ul class="space-y-3">
+        @for (project of company?.projects; track project.title) {
+          <li>
+            <h3 class="text-lg font-medium">{{ project.title }}</h3>
+            <p class="text-gray-600">{{ project.description }}</p>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+}

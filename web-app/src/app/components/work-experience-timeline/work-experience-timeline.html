@@ -1,0 +1,29 @@
+<div class="relative">
+    <!-- Vertical Line -->
+    <div class="absolute left-4 top-0 h-full w-0.5 -translate-x-1/2
+         bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 
+         timeline-line"></div>
+    <!-- Experience Item -->
+    @for (company of companies; track company.name) {
+    <div class="relative flex gap-10 mb-20">
+        <!-- Dot -->
+        <div class="relative z-10">
+            <div class="w-8 h-8 rounded-full bg-white border-4 border-indigo-600 flex items-center justify-center"
+            [class.border-indigo-600]="company.isCurrent"
+            [class.border-gray-300]="!company.isCurrent"
+            >
+                <span class="w-2 h-2 bg-indigo-600 rounded-full"></span>
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="flex-1">
+            <app-company-card [company]="company" (click)="openModal(company)"></app-company-card>
+        </div>
+    </div>
+    }
+    <app-project-modal
+        [company]="selectedCompany"
+        [isOpen]="modalOpenSignal()"
+        (closed)="closeModal()">
+    </app-project-modal>
+</div>

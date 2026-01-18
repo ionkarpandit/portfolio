@@ -1,0 +1,8 @@
+@keyframes grow-line {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+.timeline-line {
+  animation: grow-line 1.2s ease-out forwards;
+}
