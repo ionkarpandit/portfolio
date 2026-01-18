@@ -24,9 +24,9 @@ jobs:
         run: npm run build -- --configuration production --base-href /
         working-directory: web-app
 
-      - name: Clone target repo (dkeshri.github.io)
+      - name: Clone target repo (ionkarpandit.github.io)
         run: |
-          git clone https://x-access-token:${{ secrets.code_push }}@github.com/dkeshri/dkeshri.github.io.git deploy-repo
+          git clone https://x-access-token:${{ secrets.code_push }}@github.com/ionkarpandit/ionkarpandit.github.io.git deploy-repo
 
       - name: Copy build files
         run: |
