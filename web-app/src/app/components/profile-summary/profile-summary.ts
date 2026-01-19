@@ -10,7 +10,7 @@ import { ProfileImage } from "../profile-image/profile-image";
 export class ProfileSummary implements OnInit, AfterViewInit {
 
   name = 'Onkar Sharma';
-  roleText = 'Senior Software Engineer';
+  roleText = 'Software Engineer';
   joiningDate = new Date('2020-10-01'); // Your joining date
   years:number= 0;
   ngAfterViewInit(): void {
