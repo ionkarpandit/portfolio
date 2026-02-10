@@ -1,179 +1,155 @@
-<!--<footer id="contact" class="relative bg-gradient-to-tr from-indigo-50 via-white to-pink-50
-         px-6 py-12 border-t border-indigo-100">
-   <div class="absolute inset-0 -z-10
-           bg-gradient-to-tr from-indigo-200/30 to-pink-200/30
-           blur-3xl">
+<footer id="contact"
+  class="relative bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 px-6 py-16 overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-pink-500/10 blur-3xl">
   </div>
 
-  <div class="max-w-4xl mx-auto text-center fade-up">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-4">
+  <div
+    class="max-w-4xl mx-auto text-center backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-10 fade-up">
+    <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
       Let’s Connect
     </h2>
 
-    <p class="text-gray-600 text-lg">
-      Have a project in mind or just want to say hi?
+    <p class="text-gray-300 text-lg max-w-xl mx-auto mb-8">
+      Have a project in mind or just want to start a conversation?
+      I’d love to hear from you.
     </p>
 
-    <div class="mt-6 space-y-2 text-gray-700">
-      <p>
-        <span class="font-medium">📧</span>
-        <a href="mailto:royalvatsa@gmail.com" class="hover:text-indigo-600 transition-colors">
-          royalvatsa@gmail.com
-        </a>
-      </p>
-
-      <p>
-        <span class="font-medium">📞</span>
-        <a href="tel:+919410632562" class="hover:text-indigo-600 transition-colors">
-          +91&nbsp;9410632562
-        </a>
-      </p>
+    <div class="inline-flex items-center justify-center mb-2">
+      <div class="bg-gradient-to-r from-pink-500 to-purple-600 p-[1px] rounded-full">
+        <button (click)="openContactModal()" class="connect-btn bg-slate-950 px-8 py-3 rounded-full text-sm font-semibold tracking-wide
+                 text-white hover:bg-slate-900 transition-all duration-300">
+          Let’s Connect
+        </button>
+      </div>
     </div>
 
-    <app-social-media-icons/>
+    <app-social-media-icons />
 
-    <p class="mt-10 text-sm text-gray-500">
-      © {{ currentYear }} Designed & Licensed by <span style="color: rgb(117, 5, 222);" class="hover:text-indigo-600 transition-colors">Onkar Sharma</span>
+    <div class="mt-10 mb-6 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+    <p class="text-sm text-gray-400">
+      © {{ currentYear }} Designed & Licensed by
+      <span class="ml-1 font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+        Onkar Sharma
+      </span>
     </p>
-  </div> 
-</footer>-->
+  </div>
+</footer>
 
-<section id="contact"
-  class="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-6 py-16 overflow-hidden">
-  <!-- Animated background elements -->
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-40 -left-40 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
-      style="animation-delay: 2s;"></div>
-    <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+<!-- ================= MODAL ================= -->
+<div *ngIf="isContactModalOpen" class="fixed inset-0 z-50 flex items-center justify-center">
+
+  <!-- Gradient Backdrop (same as footer) -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900/95 backdrop-blur-md"
+    (click)="closeContactModal()">
   </div>
 
-  <div class="max-w-7xl mx-auto relative z-10" style="margin-bottom: -3%;">
-    <!-- Header with enhanced styling -->
-    <div class="text-center mb-10">
-      <div class="inline-block mb-3 overflow-hidden rounded-full">
-        <div class="bg-gradient-to-r from-pink-500 to-purple-500 p-px">
-          <div class="bg-slate-900 px-6 py-2 rounded-full backdrop-blur">
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 text-sm font-bold tracking-widest">●
-              GET IN TOUCH
-            </span>
-          </div>
-        </div>
-      </div>
-      <h1 class="text-5xl md:text-5xl font-black text-white mb-4 leading-tight">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">
-          Let's Connect</span>
-      </h1>
-      <p class="text-purple-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-        Have a project in mind or just want to say hi?
-      </p>
-    </div>
+  <!-- Modal Container (no scrolling) -->
+  <div class="relative w-full max-w-7xl h-[90vh] rounded-2xl animate-fadeIn flex items-center">
 
-    <!-- Main Content Grid -->
-    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
-      <!-- Contact Form with enhanced styling -->
-      <div class="group relative">
+    <button
+      (click)="closeContactModal()"
+      class="absolute top-4 right-4 z-50 text-white bg-white/10 hover:bg-white/20
+             rounded-full p-2 transition"
+      aria-label="Close">
+      ✕
+    </button>
+
+    <section
+      id="contact"
+      class="relative w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900
+             px-6 py-6 rounded-2xl overflow-hidden">
+
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div
-          class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-lg">
-        </div>
-        <div
-          class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8 transition-all duration-500 transform group-hover:scale-105">
-          <div class="flex items-center mb-2">
-            <span class="text-3xl mr-3">✉️</span>
-            <h2 class="text-2xl font-bold text-white">Send Your Message</h2>
-          </div>
-          <p class="text-purple-200 text-sm mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
-
-          <form class="space-y-5">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-white text-sm font-semibold mb-2">First Name *</label>
-                <input type="text"
-                  class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50 transition duration-300"
-                  placeholder="Onkar">
-              </div>
-              <div>
-                <label class="block text-white text-sm font-semibold mb-2">Last Name *</label>
-                <input type="text"
-                  class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50 transition duration-300"
-                  placeholder="Sharma">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-white text-sm font-semibold mb-2">Email Address *</label>
-              <input type="email"
-                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50 transition duration-300"
-                placeholder="onkar.sharma@email.com">
-            </div>
-
-            <div>
-              <label class="block text-white text-sm font-semibold mb-2">Message *</label>
-              <textarea
-                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50 transition duration-300 h-32 resize-none"
-                placeholder="Tell me about your project..."></textarea>
-            </div>
-
-            <button type="submit"
-              class="w-full mt-8 px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition duration-300 transform hover:-translate-y-0.5">
-              Send Message
-            </button>
-          </form>
+          class="absolute -bottom-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 2s">
         </div>
       </div>
 
-      <!-- Right Sidebar -->
-      <div class="space-y-8">
-        <!-- Contact Information -->
-        <div class="group relative">
-          <div
-            class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-lg">
+      <div class="max-w-7xl mx-auto relative z-10">
+
+        <div class="text-center mb-10">
+          <h1
+            class="text-5xl font-black text-transparent bg-clip-text
+                   bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">
+            Let’s Connect
+          </h1>
+
+          <p class="text-purple-200 text-lg mt-4">
+            Have a project in mind or just want to say hi?
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+
+          <!-- FORM -->
+          <div class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8">
+            <div class="flex items-center mb-2">
+              <span class="text-3xl mr-3">✉️</span>
+              <h2 class="text-2xl font-bold text-white">Send Your Message</h2>
+            </div>
+
+            <p class="text-purple-200 text-sm mb-6">
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+
+            <form class="space-y-5">
+              <div class="grid grid-cols-2 gap-4">
+                <input type="text" placeholder="First Name"
+                  class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-pink-500/50">
+                <input type="text" placeholder="Last Name"
+                  class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-pink-500/50">
+              </div>
+
+              <input type="email" placeholder="Email Address"
+                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-pink-500/50">
+
+              <textarea placeholder="Tell me about your project..."
+                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 h-28 resize-none text-white focus:ring-2 focus:ring-pink-500/50"></textarea>
+
+              <button
+                class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white
+                       font-semibold rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition">
+                Send Message
+              </button>
+            </form>
           </div>
-          <div
-            class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8 transition-all duration-500 transform group-hover:scale-105">
+
+          <!-- INFO -->
+          <div class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8">
             <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
               <span class="text-2xl mr-3">📧</span> Contact Information
             </h3>
+
             <div class="space-y-6">
               <div class="p-4 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-lg border border-pink-500/20">
-                <p class="text-purple-300 text-xs font-semibold uppercase tracking-wide mb-2">Email</p>
+                <p class="text-purple-300 text-xs font-semibold uppercase mb-2">Email</p>
                 <a href="mailto:royalvatsa@gmail.com"
-                  class="text-white text-lg font-semibold hover:text-pink-400 transition duration-300">
+                  class="text-white text-lg font-semibold hover:text-pink-400 transition">
                   royalvatsa@gmail.com
                 </a>
-                <p class="text-purple-400 text-xs mt-2">Response time: ~24 hours</p>
               </div>
 
-              <div
-                class="p-4 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-lg border border-purple-500/20">
-                <p class="text-purple-300 text-xs font-semibold uppercase tracking-wide mb-2">Phone</p>
+              <div class="p-4 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-lg border border-purple-500/20">
+                <p class="text-purple-300 text-xs font-semibold uppercase mb-2">Phone</p>
                 <a href="tel:+919410632562"
-                  class="text-white text-lg font-semibold hover:text-purple-400 transition duration-300">
+                  class="text-white text-lg font-semibold hover:text-purple-400 transition">
                   +91 9410632562
                 </a>
-                <p class="text-purple-400 text-xs mt-2">Available during business hours</p>
               </div>
             </div>
 
-            <!-- Social Media Icons -->
-            <div class="mt-10 pt-8 border-t border-purple-500/30">
-              <p class="text-white font-bold mb-5 tracking-wide">Follow On Social</p>
+            <div class="mt-8 pt-6 border-t border-purple-500/30">
+              <p class="text-white font-bold mb-4">Follow On Social</p>
               <app-social-media-icons />
             </div>
           </div>
+
         </div>
       </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="text-center mt-10 pt-8 border-t border-purple-500/20">
-      <p class="text-purple-300 text-sm">
-        © {{ currentYear }} Designed & Developed by
-        <span
-          class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-bold hover:drop-shadow-lg transition duration-300 cursor-pointer">Onkar
-          Sharma</span>
-      </p>
-    </div>
+    </section>
   </div>
-</section>
+</div>
