@@ -41,7 +41,7 @@
 
   <!-- Gradient Backdrop (same as footer) -->
   <div
-    class="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900/95 backdrop-blur-md"
+    class="absolute inset-0 from-slate-950 via-indigo-950 to-slate-900/95 backdrop-blur-md"
     (click)="closeContactModal()">
   </div>
 
@@ -85,7 +85,6 @@
 
         <div class="grid lg:grid-cols-2 gap-10">
 
-          <!-- FORM -->
           <div class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8">
             <div class="flex items-center mb-2">
               <span class="text-3xl mr-3">✉️</span>
@@ -98,16 +97,16 @@
 
             <form class="space-y-5">
               <div class="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="First Name"
+                <input type="text" placeholder="First Name" autocomplete="off"
                   class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-pink-500/50">
-                <input type="text" placeholder="Last Name"
+                <input type="text" placeholder="Last Name" autocomplete="off"
                   class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-pink-500/50">
               </div>
 
-              <input type="email" placeholder="Email Address"
+              <input type="email" placeholder="Email Address" autocomplete="off"
                 class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-pink-500/50">
 
-              <textarea placeholder="Tell me about your project..."
+              <textarea placeholder="Tell me about your project..." autocomplete="off"
                 class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3 h-28 resize-none text-white focus:ring-2 focus:ring-pink-500/50"></textarea>
 
               <button
@@ -118,7 +117,6 @@
             </form>
           </div>
 
-          <!-- INFO -->
           <div class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8">
             <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
               <span class="text-2xl mr-3">📧</span> Contact Information
