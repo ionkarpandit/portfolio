@@ -20,24 +20,30 @@ export class ContactMe {
   submitSuccess = false;
   submitError = '';
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) {
     this.contactForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
+  /** Easy access for template */
   get f() {
     return this.contactForm.controls;
   }
 
-  closeModal() {
+  /** Close modal */
+  closeModal(): void {
     this.close.emit();
   }
 
-  sendMessage() {
+  /** Submit form */
+  sendMessage(): void {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
@@ -47,15 +53,26 @@ export class ContactMe {
     this.submitError = '';
     this.submitSuccess = false;
 
-    const payload = this.contactForm.value;
+    const payload = {
+      ...this.contactForm.value,
+      timestamp: new Date().toISOString(),
+    };
 
-    // TEMP mock (replace later with real API)
-    setTimeout(() => {
-      this.isSubmitting = false;
-      this.submitSuccess = true;
-      this.contactForm.reset();
+    // 🔁 Replace with your real backend / email API
+    this.http.post('https://your-api-endpoint/contact', payload).subscribe({
+      next: () => {
+        this.isSubmitting = false;
+        this.submitSuccess = true;
+        this.contactForm.reset();
 
-      setTimeout(() => this.closeModal(), 1200);
-    }, 1200);
+        // Optional: auto close after success
+        setTimeout(() => this.closeModal(), 1200);
+      },
+      error: () => {
+        this.isSubmitting = false;
+        this.submitError = 'Something went wrong. Please try again later.';
+      }
+    });
   }
+  
 }

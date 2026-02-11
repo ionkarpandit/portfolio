@@ -61,13 +61,14 @@
             <p class="text-purple-200 text-sm mb-6">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
-
-            <form class="space-y-5">
+            
+            <form [formGroup]="contactForm" (ngSubmit)="sendMessage()" class="space-y-5">
               <div class="grid grid-cols-2 gap-4">
                 <input
                   type="text"
                   placeholder="First Name"
                   autocomplete="off"
+                  formControlName="firstName"
                   class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
                          text-white focus:ring-2 focus:ring-pink-500/50">
 
@@ -75,25 +76,64 @@
                   type="text"
                   placeholder="Last Name"
                   autocomplete="off"
+                  formControlName="lastName"
                   class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
                          text-white focus:ring-2 focus:ring-pink-500/50">
             </div>
             
-            <input type="email" placeholder="Email Address" 
+            <input type="email" 
+                placeholder="Email Address" 
                 autocomplete="off" 
-                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
-                                   text-white focus:ring-2 focus:ring-pink-500/50">
-            
+                formControlName="email"
+                class="w-full bg-slate-900/50 border rounded-full px-5 py-3 text-white
+                    transition focus:outline-none
+                    focus:ring-2
+                    {{
+                    f.email.invalid && (f.email.touched || f.email.dirty)
+                    ? 'border-red-500'
+                    : 'border-cyan-400'
+                    }}">
+
+            <p *ngIf="f.email.invalid && (f.email.touched || f.email.dirty)" class="text-red-500 text-sm">
+
+                <span *ngIf="f.email.errors?.['required']">
+                    Email is required
+                </span>
+
+                <span *ngIf="f.email.errors?.['email']">
+                    Please enter a valid email address
+                </span>
+            </p>
+
             <textarea placeholder="Tell me about your project..." 
                 autocomplete="off" 
-                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
-                                    h-28 resize-none text-white focus:ring-2 focus:ring-pink-500/50"></textarea>
+                formControlName="message"
+                class="w-full bg-slate-900/50 border rounded-xl px-5 py-3 h-28 resize-none text-white
+                        transition focus:outline-none
+                        {{
+                        f.message.invalid && (f.message.touched || f.message.dirty)
+                        ? 'border-red-500'
+                        : 'border-purple-500/30'
+                        }}">
+            </textarea>
             
-            <button type="submit" 
-            class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500
-                                   text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition">
-                Send Message
+            <p *ngIf="f.message.invalid && (f.message.touched || f.message.dirty)" class="text-red-500 text-sm">
+                Message must be at least 10 characters
+            </p>
+
+            <button type="submit" [disabled]="contactForm.invalid || isSubmitting" 
+                class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500
+                     text-white font-semibold rounded-lg transition hover:shadow-lg hover:shadow-pink-500/50
+                     disabled:opacity-40 disabled:cursor-not-allowed">
+            
+                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
             </button>
+
+            <!-- <button type="submit" [disabled]="contactForm.invalid || isSubmitting" 
+                class="w-full py-3 rounded-lg font-semibold transition bg-gradient-to-r from-pink-500 to-purple-500
+                     text-white disabled:opacity-40 disabled:cursor-not-allowed">
+                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </button> -->
             </form>
           </div>
 
