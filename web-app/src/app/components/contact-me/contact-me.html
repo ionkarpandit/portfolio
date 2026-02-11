@@ -1,0 +1,141 @@
+<div class="fixed inset-0 z-50 flex items-center justify-center">
+
+  <!-- Backdrop -->
+  <div
+    class="absolute inset-0 from-slate-950 via-indigo-950 to-slate-900/95 backdrop-blur-md"
+    (click)="close.emit()">
+  </div>
+
+  <!-- Modal -->
+  <div class="relative w-full max-w-7xl h-[90vh] rounded-2xl animate-fadeIn flex items-center">
+
+    <!-- Close Button -->
+    <button
+      (click)="close.emit()"
+      class="fixed top-6 right-6 z-50 text-white bg-white/10 hover:bg-white/20
+             rounded-full p-2 transition"
+      aria-label="Close">
+      ✕
+    </button>
+
+    <section
+      id="contact"
+      class="relative w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900
+             px-6 py-6 rounded-2xl overflow-hidden">
+
+      <!-- Decorative blobs -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div
+          class="absolute -bottom-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 2s">
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <h1
+            class="text-5xl font-black text-transparent bg-clip-text
+                   bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">
+            Let’s Connect
+          </h1>
+
+          <p class="text-purple-200 text-lg mt-4">
+            Have a project in mind or just want to say hi?
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+
+          <!-- Contact Form -->
+          <div
+            class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8">
+
+            <div class="flex items-center mb-2">
+              <span class="text-3xl mr-3">✉️</span>
+              <h2 class="text-2xl font-bold text-white">Send Your Message</h2>
+            </div>
+
+            <p class="text-purple-200 text-sm mb-6">
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+
+            <form class="space-y-5">
+              <div class="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  autocomplete="off"
+                  class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
+                         text-white focus:ring-2 focus:ring-pink-500/50">
+
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  autocomplete="off"
+                  class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
+                         text-white focus:ring-2 focus:ring-pink-500/50">
+            </div>
+            
+            <input type="email" placeholder="Email Address" 
+                autocomplete="off" 
+                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
+                                   text-white focus:ring-2 focus:ring-pink-500/50">
+            
+            <textarea placeholder="Tell me about your project..." 
+                autocomplete="off" 
+                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
+                                    h-28 resize-none text-white focus:ring-2 focus:ring-pink-500/50"></textarea>
+            
+            <button type="submit" 
+            class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500
+                                   text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition">
+                Send Message
+            </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div
+            class="relative bg-slate-800/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8">
+
+            <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+              <span class="text-2xl mr-3">📧</span> Contact Information
+            </h3>
+
+            <div class="space-y-6">
+              <div
+                class="p-4 bg-gradient-to-br from-pink-500/10 to-purple-500/10
+                       rounded-lg border border-pink-500/20">
+                <p class="text-purple-300 text-xs font-semibold uppercase mb-2">Email</p>
+                <a
+                  href="mailto:royalvatsa@gmail.com"
+                  class="text-white text-lg font-semibold hover:text-pink-400 transition">
+                  royalvatsa@gmail.com
+                </a>
+                <p class="text-purple-200 text-sm">
+                  Typical response time: <span class="font-semibold">within 24 hours</span>
+                </p>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gradient-to-br from-pink-500/10 to-emerald-500/10
+                       border border-green-500/20">
+                <p class="text-purple-300 text-xs font-semibold uppercase mb-2">Location</p>
+                <p class="text-white font-semibold">Noida, India</p>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-purple-500/30">
+              <p class="text-white font-bold mb-4">Follow On Social</p>
+              <app-social-media-icons />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

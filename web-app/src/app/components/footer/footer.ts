@@ -1,45 +1,29 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+
+import { AfterViewInit, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ContactMe } from '../contact-me/contact-me';
 import { SocialMediaIcons } from '../social-media-icons/social-media-icons';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [
-    CommonModule,      // ✅ REQUIRED for *ngIf, *ngFor
-    SocialMediaIcons
-  ],
+  imports: [CommonModule, ContactMe, SocialMediaIcons],
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  styleUrl: './footer.css'
 })
-export class Footer implements AfterViewInit {
-
-  currentYear: number = new Date().getFullYear();
-
-  // Modal state
+export class Footer {
+  currentYear = new Date().getFullYear();
   isContactModalOpen = false;
 
-  /* ================= MODAL METHODS ================= */
-
-  openContactModal(): void {
+  openContactModal() {
     this.isContactModalOpen = true;
     document.body.classList.add('overflow-hidden');
   }
 
-  closeContactModal(): void {
+  closeContactModal() {
     this.isContactModalOpen = false;
     document.body.classList.remove('overflow-hidden');
   }
-
-  // Close modal on ESC
-  @HostListener('document:keydown.escape', [])
-  onEscKey(): void {
-    if (this.isContactModalOpen) {
-      this.closeContactModal();
-    }
-  }
-
-  /* ================= ANIMATION OBSERVER ================= */
 
   ngAfterViewInit(): void {
     const observer = new IntersectionObserver(
