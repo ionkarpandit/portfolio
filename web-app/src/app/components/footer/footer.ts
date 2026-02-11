@@ -1,5 +1,5 @@
 
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactMe } from '../contact-me/contact-me';
 import { SocialMediaIcons } from '../social-media-icons/social-media-icons';

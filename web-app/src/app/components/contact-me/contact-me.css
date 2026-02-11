@@ -1,0 +1,26 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+
+/* Hover */
+.connect-btn:hover {
+  transform: translateY(-2px) scale(0.98);
+  background-position: right center;
+
+  box-shadow:
+    0 10px 30px rgba(255, 60, 172, 0.35),
+    0 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
