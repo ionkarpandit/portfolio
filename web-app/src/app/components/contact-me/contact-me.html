@@ -85,22 +85,21 @@
                 placeholder="Email Address" 
                 autocomplete="off" 
                 formControlName="email"
-                class="w-full bg-slate-900/50 border rounded-full px-5 py-3 text-white
-                    transition focus:outline-none
-                    focus:ring-2
+                class="w-full bg-slate-900/50 border border-purple-500/30 rounded-lg px-4 py-3
+                         text-white focus:ring-2 focus:ring-pink-500/50
                     {{
-                    f.email.invalid && (f.email.touched || f.email.dirty)
-                    ? 'border-red-500'
-                    : 'border-cyan-400'
+                    f['email'].invalid && (f['email'].touched || f['email'].dirty)
+                    ? 'border-red-500 focus:ring-red-500/40'
+                    : 'border-cyan-400 focus:ring-cyan-400/40'
                     }}">
 
-            <p *ngIf="f.email.invalid && (f.email.touched || f.email.dirty)" class="text-red-500 text-sm">
+            <p *ngIf="f['email'].invalid && (f['email'].touched || f['email'].dirty)" class="text-red-500 text-sm">
 
-                <span *ngIf="f.email.errors?.['required']">
+                <span *ngIf="f['email'].errors?.['required']">
                     Email is required
                 </span>
 
-                <span *ngIf="f.email.errors?.['email']">
+                <span *ngIf="f['email'].errors?.['pattern']">
                     Please enter a valid email address
                 </span>
             </p>
@@ -111,13 +110,13 @@
                 class="w-full bg-slate-900/50 border rounded-xl px-5 py-3 h-28 resize-none text-white
                         transition focus:outline-none
                         {{
-                        f.message.invalid && (f.message.touched || f.message.dirty)
-                        ? 'border-red-500'
-                        : 'border-purple-500/30'
+                        f['message'].invalid && (f['message'].touched || f['message'].dirty)
+                        ? 'border-red-500 focus:ring-red-500/40'
+                        : 'border-purple-500/30 focus:ring-purple-500/40'
                         }}">
             </textarea>
             
-            <p *ngIf="f.message.invalid && (f.message.touched || f.message.dirty)" class="text-red-500 text-sm">
+            <p *ngIf="f['message'].invalid && (f['message'].touched || f['message'].dirty)" class="text-red-500 text-sm">
                 Message must be at least 10 characters
             </p>
 
@@ -128,12 +127,6 @@
             
                 {{ isSubmitting ? 'Sending...' : 'Send Message' }}
             </button>
-
-            <!-- <button type="submit" [disabled]="contactForm.invalid || isSubmitting" 
-                class="w-full py-3 rounded-lg font-semibold transition bg-gradient-to-r from-pink-500 to-purple-500
-                     text-white disabled:opacity-40 disabled:cursor-not-allowed">
-                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
-            </button> -->
             </form>
           </div>
 

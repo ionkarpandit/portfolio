@@ -27,7 +27,14 @@ export class ContactMe {
     this.contactForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/)
+          // ,Validators.email
+        ]
+      ],
       message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
