@@ -1,0 +1,128 @@
+.about-card {
+  background: rgba(88, 28, 135, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
+  transition: 0.4s ease;
+}
+
+.about-card:hover {
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.5);
+  transform: translateY(-6px);
+}
+
+.about-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.about-divider {
+  height: 3px;
+  width: 80px;
+  background: linear-gradient(to right, #a78bfa, #c084fc, #f472b6);
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  color: #e9d5ff;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-sub {
+  font-size: 1rem;
+  color: #ddd6fe;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.about-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 25px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.about-features {
+  display: grid;
+  gap: 14px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+  color: #f3e8ff;
+  font-weight: 500;
+}
+
+.feature-item:hover {
+  background: rgba(168, 85, 247, 0.2);
+  transform: translateX(6px);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #a78bfa, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+
+.stat-label {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== EXPERTISE BLOCK ===== */
+
+.expertise-card {
+  background: linear-gradient(145deg, rgba(30,41,59,0.6), rgba(15,23,42,0.6));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+  transition: 0.4s ease;
+}
+
+.expertise-card:hover {
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.35);
+}
+
+.expertise-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: white;
+  position: relative;
+}
+
+.expertise-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 4px;
+}
