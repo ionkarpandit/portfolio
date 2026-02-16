@@ -30,7 +30,7 @@ export class Skills implements OnInit {
         title: 'Programming', subtitle:'Core languages & fundamentals',
         favSkils: ['C#', 'HTML', 'CSS','JavaScript', 'jQuery','SQL'], 
         nonFavSkills: [] 
-      },
+      }
       
     ] as Skill[];
   }

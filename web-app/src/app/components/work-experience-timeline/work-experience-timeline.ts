@@ -30,12 +30,23 @@ export class WorkExperienceTimeline implements OnInit{
   }
   getCompanies():Company[] {
     return [
+      // {
+      //   name: '',
+      //   designation: 'Senior Software Engineer',
+      //   startDate: '',
+      //   endDate: '',
+      //   isCurrent: true,
+      //   logoUrl: 'assets/img/epaysystem.png',  
+      //   points: [ ],
+      // projects: [
+      //   { title: 'Project 1', description: 'Description 1' }      ],
+      // },
           {
         name: 'PrismHR, A Vensure Employer Solutions Company',
         designation: 'Senior Software Engineer',
         startDate: '01th October, 2020',
         endDate: 'Till Now',
-        isCurrent: true,
+        isCurrent: false,
         logoUrl: 'assets/img/epaysystem.png',  
         points: [
         'Led design and modernization of multi-tenant payroll systems serving 5+ US enterprise clients across healthcare and government sectors',
@@ -45,8 +56,8 @@ export class WorkExperienceTimeline implements OnInit{
         'Mentored 4+ junior developers on code reviews, code quality and clean architecture (SOLID principles)'
       ],
       projects: [
-        { title: 'Project 1', description: 'Description 1' },
-        { title: 'Project 2', description: 'Description 2' },
+        { title: 'Core TLM', description: 'Description 1' },
+        { title: 'Business Reports', description: 'Description 2' },
       ],
       }
     ]as Company[];
