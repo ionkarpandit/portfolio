@@ -11,7 +11,7 @@ export class ProfileSummary implements OnInit, AfterViewInit {
 
   name = 'Onkar Sharma';
   roleText = 'Software Engineer';
-  joiningDate = new Date('2020-10-01'); // Your joining date
+  joiningDate = new Date('2020-01-13'); // Your joining date
   years:number= 0;
   ngAfterViewInit(): void {
     //this.observeFade();
