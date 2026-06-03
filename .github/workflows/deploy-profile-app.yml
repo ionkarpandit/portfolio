@@ -26,7 +26,7 @@ jobs:
 
       - name: Clone target repo (ionkarpandit.github.io)
         run: |
-          git clone https://x-access-token:${{ secrets.code_push }}@github.com/ionkarpandit/ionkarpandit.github.io.git deploy-repo
+          git clone https://x-access-token:${{ secrets.code_push_1 }}@github.com/ionkarpandit/ionkarpandit.github.io.git deploy-repo
 
       - name: Copy build files
         run: |
