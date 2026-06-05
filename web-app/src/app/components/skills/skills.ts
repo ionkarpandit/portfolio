@@ -23,7 +23,7 @@ export class Skills implements OnInit {
       },
       { 
         title: 'Tools / Platforms', subtitle:'Development & productivity tools',
-        favSkils: ['Git', 'GitHub','Visual Studio','VS Code','SSMS','Postman'], 
+        favSkils: ['Git', 'GitHub','Visual Studio','VS Code','SSMS','Postman', 'JIRA', 'Azure DevOps'], 
         nonFavSkills: ['SVN','Figma'] 
       },
       { 
